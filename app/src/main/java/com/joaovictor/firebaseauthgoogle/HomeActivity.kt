@@ -20,6 +20,10 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         setupUI()
+        
+        segue.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, HomeboardActivity::class.java))
+        }
     }
 
     private fun setupUI() {

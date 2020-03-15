@@ -34,7 +34,7 @@ class SignActivity : AppCompatActivity() {
         val user = FirebaseAuth.getInstance().currentUser
 
         if (user != null) {
-            startActivity(HomeActivity.getLaunchIntent(this))
+            startActivity(Intent(this@SignActivity, HomeboardActivity::class.java))
             finish()
         }
     }
@@ -77,7 +77,7 @@ class SignActivity : AppCompatActivity() {
 
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
-                startActivity(HomeActivity.getLaunchIntent(this))
+                startActivity(Intent(this@SignActivity, HomeboardActivity::class.java))
             } else {
                 Toast.makeText(this, "Google sign in failed:(", Toast.LENGTH_LONG).show()
             }
