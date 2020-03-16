@@ -29,18 +29,6 @@ class HomeboardActivity : AppCompatActivity() {
         }
     }
 
-    private fun logout() {
-        val user = FirebaseAuth.getInstance().currentUser
-
-        if (user != null) {
-            firebaseAuth.signOut()
-            startActivity(Intent(this@HomeboardActivity, SignActivity::class.java))
-            finish()
-        }
-
-
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homeboard)
@@ -94,6 +82,19 @@ class HomeboardActivity : AppCompatActivity() {
                 }
             }
             false
+        }
+    }
+
+    private fun logout() {
+        val user = FirebaseAuth.getInstance().currentUser
+
+        if (user != null) {
+            firebaseAuth.signOut()
+            val signOutIntent = Intent(this@HomeboardActivity, SignActivity::class.java)
+            signOutIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+            startActivity(signOutIntent)
+            finish()
         }
 
 

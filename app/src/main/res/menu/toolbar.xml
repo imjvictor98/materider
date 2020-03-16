@@ -4,9 +4,10 @@
     <item
 
         android:id="@+id/logout"
-        android:title="Logout"
+        android:title="@string/logout"
         android:visible="true"
         android:icon="@drawable/exit"
-        app:showAsAction="never"
+        android:orderInCategory="100"
+        app:showAsAction="always"
         />
 </menu>
