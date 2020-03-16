@@ -1,10 +1,45 @@
 package com.joaovictor.firebaseauthgoogle
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_homeboard.*
 
 class HomeboardActivity : AppCompatActivity() {
+
+    private lateinit var firebaseAuth: FirebaseAuth
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.logout -> {
+                logout()
+               true
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
+        }
+    }
+
+    private fun logout() {
+        val user = FirebaseAuth.getInstance().currentUser
+
+        if (user != null) {
+            firebaseAuth.signOut()
+            startActivity(Intent(this@HomeboardActivity, SignActivity::class.java))
+            finish()
+        }
+
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +53,8 @@ class HomeboardActivity : AppCompatActivity() {
                 .replace(R.id.container, fragment, fragment.javaClass.simpleName)
                 .commit()
         }
+
+        firebaseAuth = FirebaseAuth.getInstance()
 
         setSupportActionBar(toolbar)
 
