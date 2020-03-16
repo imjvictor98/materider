@@ -2,7 +2,6 @@ package com.joaovictor.firebaseauthgoogle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_homeboard.*
 
 class HomeboardActivity : AppCompatActivity() {
@@ -12,7 +11,7 @@ class HomeboardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_homeboard)
 
         if (savedInstanceState == null) {
-            val fragment = FirstFragment()
+            val fragment = RegisterFragment()
 
             supportFragmentManager
                 .beginTransaction()
@@ -25,7 +24,7 @@ class HomeboardActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener {menuItem ->
             when(menuItem.itemId) {
                 R.id.nav_1 -> {
-                    val fragment = FirstFragment()
+                    val fragment = RegisterFragment()
 
                     supportFragmentManager
                         .beginTransaction()

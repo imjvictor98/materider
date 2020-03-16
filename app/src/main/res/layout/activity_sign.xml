@@ -68,6 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
         android:backgroundTint="#353535"
+        android:fontFamily="@font/montserrat"
         android:text="@string/login"
         app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
