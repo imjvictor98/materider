@@ -40,9 +40,12 @@ dependencies {
     //Firebase Analytics
     implementation 'com.google.firebase:firebase-analytics:17.2.3'
 
-    //Firebase
+    //Firebase Core and Auth
     implementation 'com.google.firebase:firebase-core:17.2.3'
     implementation 'com.google.firebase:firebase-auth:19.2.0'
+
+    //Firestore database
+    implementation 'com.google.firebase:firebase-database:19.2.1'
 
     //Play Service Auth
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
