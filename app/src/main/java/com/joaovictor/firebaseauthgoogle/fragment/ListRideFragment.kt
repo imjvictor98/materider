@@ -1,4 +1,4 @@
-package com.joaovictor.firebaseauthgoogle
+package com.joaovictor.firebaseauthgoogle.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -9,11 +9,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.column_recycler.*
-import kotlinx.android.synthetic.main.fragment_home.*
+import com.joaovictor.firebaseauthgoogle.R
+import com.joaovictor.firebaseauthgoogle.model.Ride
+import com.joaovictor.firebaseauthgoogle.adapter.RideAdapter
 import kotlinx.android.synthetic.main.fragment_rides_list.*
 
-class SecondFragment: Fragment() {
+class ListRideFragment: Fragment() {
 
     private lateinit var database: DatabaseReference
     private lateinit var ridesList: ArrayList<Ride>

@@ -1,9 +1,11 @@
-package com.joaovictor.firebaseauthgoogle
+package com.joaovictor.firebaseauthgoogle.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.joaovictor.firebaseauthgoogle.R
+import com.joaovictor.firebaseauthgoogle.model.Ride
 import kotlinx.android.synthetic.main.ride_item.view.*
 
 class RideAdapter(val ridelist: ArrayList<Ride>):

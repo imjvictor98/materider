@@ -1,4 +1,4 @@
-package com.joaovictor.firebaseauthgoogle
+package com.joaovictor.firebaseauthgoogle.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.joaovictor.firebaseauthgoogle.R
+import com.joaovictor.firebaseauthgoogle.model.Ride
 import kotlinx.android.synthetic.main.fragment_register.*
 import java.util.*
 
@@ -59,7 +61,8 @@ class RegisterFragment : Fragment() {
     }
 
     private fun writeNewUser(client: String, value: Float, date: String) {
-        val ride = Ride(client, date, value)
+        val ride =
+            Ride(client, date, value)
         val user = FirebaseAuth.getInstance().currentUser
 
 

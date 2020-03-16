@@ -1,4 +1,4 @@
-package com.joaovictor.firebaseauthgoogle
+package com.joaovictor.firebaseauthgoogle.model
 
 import java.util.*
 

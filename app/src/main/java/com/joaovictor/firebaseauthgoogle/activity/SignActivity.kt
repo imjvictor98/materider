@@ -1,4 +1,4 @@
-package com.joaovictor.firebaseauthgoogle
+package com.joaovictor.firebaseauthgoogle.activity
 
 import android.content.Context
 import android.content.Intent
@@ -13,6 +13,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.joaovictor.firebaseauthgoogle.R
 import kotlinx.android.synthetic.main.activity_sign.*
 
 class SignActivity : AppCompatActivity() {
@@ -34,7 +35,7 @@ class SignActivity : AppCompatActivity() {
         val user = FirebaseAuth.getInstance().currentUser
 
         if (user != null) {
-            startActivity(Intent(this@SignActivity, HomeboardActivity::class.java))
+            startActivity(Intent(this@SignActivity, HomeActivity::class.java))
             finish()
         }
     }
@@ -77,7 +78,7 @@ class SignActivity : AppCompatActivity() {
 
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
-                startActivity(Intent(this@SignActivity, HomeboardActivity::class.java))
+                startActivity(Intent(this@SignActivity, HomeActivity::class.java))
             } else {
                 Toast.makeText(this, "Google sign in failed:(", Toast.LENGTH_LONG).show()
             }
