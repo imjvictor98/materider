@@ -9,7 +9,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.joaovictor.firebaseauthgoogle.*
 import com.joaovictor.firebaseauthgoogle.fragment.RegisterFragment
 import com.joaovictor.firebaseauthgoogle.fragment.ListRideFragment
-import com.joaovictor.firebaseauthgoogle.fragment.ThirdFragment
 import kotlinx.android.synthetic.main.activity_homeboard.*
 
 class HomeActivity : AppCompatActivity() {
@@ -68,18 +67,6 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_2 -> {
                     val fragment =
                         ListRideFragment()
-
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.container, fragment, fragment.javaClass.simpleName)
-                        .commit()
-
-                    return@setOnNavigationItemSelectedListener true
-                }
-
-                R.id.nav_3 -> {
-                    val fragment =
-                        ThirdFragment()
 
                     supportFragmentManager
                         .beginTransaction()
